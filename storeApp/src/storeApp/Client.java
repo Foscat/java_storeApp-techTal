@@ -8,6 +8,12 @@ public class Client {
 	private static Scanner ask = new Scanner(System.in);
 
 	private static Inventory myInventory = new Inventory();
+	
+	public static int numPro(){
+		System.out.println("How many products would you like to add to inventory?");
+		int getInt = ask.nextInt();
+		return getInt;
+	}
 
 	public static Inventory myStore(int proNum){
 
