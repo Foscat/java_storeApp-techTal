@@ -31,6 +31,18 @@ public class Product {
 		this.salePrice = salePrice;
 	}
 
+	Product(){
+		giveValues();
+	}
+	
+	void giveValues(){
+		giveName();
+		giveQuantity();
+		giveSerialNum();
+		giveStoreCost();
+		giveSellPrice();
+	}
+
 	void giveName(){
 		System.out.println("What will the name of the product be?");
 		Scanner giver = new Scanner(System.in);
@@ -55,14 +67,14 @@ public class Product {
 	void giveStoreCost(){
 		System.out.println("What is the total cost of each item?");
 		Scanner giver = new Scanner(System.in);
-		float costChanger = giver.nextFloat();
+		double costChanger = giver.nextDouble();
 		this.cost = costChanger;
 	}
 
 	void giveSellPrice(){
 		System.out.println("What is the selling price of product?");
 		Scanner giver = new Scanner(System.in);
-		float quantChanger = giver.nextFloat();
+		double quantChanger = giver.nextDouble();
 		this.salePrice = quantChanger;
 	}
 	
@@ -77,20 +89,16 @@ public class Product {
 	}
 	
 
-//	}
+
 	
 	public static void main(String[] args){
-		Product product1 = new Product("Apple", 500, 3657890, 0.20, 1.34);
+		Product product1 = new Product();
 		
 		product1.printInfo();
-		
-		product1.giveName();
-		product1.giveQuantity();
-		product1.giveSerialNum();
-		product1.giveStoreCost();
-		product1.giveStoreCost();
-		
-		product1.printInfo();
+
+		Product product2 = new Product("peach", 135, 34343434, 1.34, 2.56);
+		product2.printInfo();
+
 		
 	}
 
